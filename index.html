@@ -6,6 +6,9 @@
     <title>Sign Up Form</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
+<!-- ==================================================================================== -->
+
 <body>
     <nav>
         Enter the Contest for the Vacation of a Lifetime
@@ -14,16 +17,30 @@
         <h2>Vacation Contest Sign-Up Form</h2>
         <form method="GET" action="results.html">
             <div>
-                <label for="firstname">Your First Name</label>
-                <input type="text" id="firstname" name="firstname">
-                <label for="lastname">Your Last Name</label>
-                <input type="text" id="lastname" name="lastname">
+                <label for="firstname">Your First Name</label><span class="required-field">*</span>
+
+                <input required minlength="2" maxlength="32" 
+                        type="text" id="firstname" name="firstname">
+
+                <label for="lastname">Your Last Name</label><span class="required-field">*</span>
+
+                <input required minlength="2" maxlength="32" 
+                        type="text" id="lastname" name="lastname">
+
+                <label for="age">Your Age</label>
+                <input min="21" max="120"
+                    type="number" id="number" name="number">
+                <h5>One must be age 21 or older to enter the contest</h5>
+
             </div>
+
+<!-- ==================================================================================== -->
+
             <fieldset>
                 <legend>Your Contact Info</legend>
                 <div>
-                    <label for="email">Your Email</label>
-                    <input type="email" id="email" name="email">
+                    <label for="email">Your Email</label><span class="required-field">*</span>
+                    <input required type="email" id="email" name="email">
                 </div>
                 <div>
                     <label for="address">Your Street Address</label>
@@ -86,33 +103,47 @@
                         <option value="WY">Wyoming</option>
                     </datalist>
                     <label for="zip">Your Zipcode</label>
-                    <input type="text" id="zip" name="zip">
+                    <input pattern="[0-9]{5}"
+                    title="5-Digit US ZIP Code" type="text" id="zip" name="zip">
                 </div>
             </fieldset>
+
+<!-- ==================================================================================== -->
 
             <fieldset>
                 <legend>Your Preferences</legend>
                 <h3>Choose your location</h3>
                 <div>
                     <input type="radio" id="aruba" name="location" value="Aruba" checked> 
-                    <label for="aruba">Aruba</label>
+                    <label for="aruba">Aruba, Netherlands</label>
                 </div>
                 <div>
                     <input type="radio" id="japan" name="location" value="Japan"> 
-                    <label for="japan">Japan</label>
+                    <label for="japan">Osaka, Japan</label>
                 </div>
                 <div>
                     <input type="radio" id="reykjavik" name="location" value="Reykjavik"> 
-                    <label for="reykjavik">Reykjavik</label>
+                    <label for="reykjavik">Reykjavik, Iceland</label>
                 </div>
                 <div>
                     <input type="radio" id="new-zealand" name="location" value="New Zealand"> 
-                    <label for="new-zealand">New Zealand</label>
+                    <label for="new-zealand">Wellington, New Zealand</label>
+                </div>
+                <div>
+                    <input type="radio" id="new-zealand" name="location" value="New Zealand"> 
+                    <label for="new-zealand">Stockholm, Sweden</label>
+                </div>                
+                <div>
+                    <input type="radio" id="new-zealand" name="location" value="New Zealand"> 
+                    <label for="new-zealand">Toulouse, France</label>
                 </div>
                 <div>
                     <label for="color">Favorite Color</label>
                     <input type="color" id="color" name="color">
                 </div>
+
+<!-- ==================================================================================== -->
+
                 <h3>Please select any add-ons you'd like:</h3>
                 <div>
                     <input type="checkbox" id="sauna" name="extras" value="Sauna Access" checked> 
@@ -131,6 +162,18 @@
                     <label for="drinks">All-inclusive Drinks Package</label>
                 </div>
             </fieldset>
+<!-- ==================================================================================== -->
+
+            <fieldset>
+                <div>
+                    <label>Your Secret Code (must be 6 alphanumeric characters)</label><span class="required-field">*</span>
+                    <input required pattern="[0-9, a-z, A-Z]{6}"
+                        title="6 Alphanumeric Character Passcode" type="password">
+                </div>
+            </fieldset>
+
+<!-- ==================================================================================== -->
+
             
             <input type="submit" value="Enter the Contest!">
         </form>
